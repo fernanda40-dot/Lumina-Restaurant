@@ -1,0 +1,605 @@
+/* --- RESET Y BASE RESPONSIVA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base para rem */
+}
+
+body {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita desbordamiento horizontal en móviles */
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: rgba(11, 17, 32, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    flex-wrap: wrap; /* Permite acomodarse en pantallas pequeñas */
+    gap: 1rem;
+}
+
+.logo-seccion {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-seccion h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem); /* Texto fluido */
+    color: #ffffff !important;
+    line-height: 1.1;
+}
+
+.slogan {
+    font-size: 0.85rem;
+    color: #d4af37 !important;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #e2e8f0 !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37 !important;
+}
+
+.btn-header {
+    background-color: #ffffff;
+    color: #000000 !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-header:hover {
+    background-color: #d4af37;
+    color: #ffffff !important;
+}
+
+/* --- HERO BANNER --- */
+.hero-seccion {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.hero-banner {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.hero-banner img {
+    width: 100%;
+    height: clamp(300px, 55vh, 480px); /* Altura fluida según el dispositivo */
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.65);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.hero-overlay h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #d4af37 !important;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-overlay p {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    color: #ffffff !important;
+    max-width: 700px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/* --- SECCIONES GENERALES --- */
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #ffffff !important;
+    margin-bottom: 0.3rem;
+}
+
+.subtitulo-seccion {
+    color: #d4af37 !important;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    margin-bottom: 2rem;
+}
+
+hr.separador {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+    margin: 2rem 0;
+}
+
+/* --- HISTORIA Y PILARES --- */
+.historia-texto {
+    text-align: justify;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: #cbd5e1 !important;
+    margin-bottom: 2.5rem;
+}
+
+.historia-texto p {
+    margin-bottom: 1.4rem;
+}
+
+.historia-texto strong {
+    color: #d4af37 !important;
+}
+
+.grid-pilares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card-box {
+    background-color: #1e293b !important;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.card-box:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+
+.card-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff !important;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.card-box p {
+    font-size: 0.9rem;
+    color: #94a3b8 !important;
+    line-height: 1.5;
+}
+
+.pilar-numero {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d4af37 !important;
+    margin-bottom: 0.5rem;
+}
+
+/* --- MENÚ INTERACTIVO --- */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #1e293b;
+    color: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #d4af37 !important;
+    color: #0f172a !important;
+    border-color: #d4af37 !important;
+    font-weight: bold;
+}
+
+.banner-categoria {
+    width: 100%;
+    max-width: 600px;
+    height: clamp(180px, 30vh, 260px);
+    margin: 0 auto 2.5rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.banner-categoria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+}
+
+.menu-item {
+    padding: 1.2rem;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+}
+
+.platillo-nombre {
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-weight: 600;
+    display: block;
+}
+
+.platillo-desc {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-top: 0.4rem;
+}
+
+.paquete-lista {
+    list-style: none;
+    margin-top: 0.6rem;
+    padding-left: 0;
+}
+
+.paquete-lista li {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.paquete-lista li::before {
+    content: "•";
+    color: #d4af37;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Colores por categoría */
+.menu-item.desayunos { background-color: #1e293b; border-left: 5px solid #f59e0b; }
+.menu-item.entradas  { background-color: #132e27; border-left: 5px solid #10b981; }
+.menu-item.carnes    { background-color: #31181c; border-left: 5px solid #ef4444; }
+.menu-item.pollo     { background-color: #332615; border-left: 5px solid #eab308; }
+.menu-item.pescados  { background-color: #11283d; border-left: 5px solid #06b6d4; }
+.menu-item.pastas    { background-color: #332218; border-left: 5px solid #f97316; }
+.menu-item.casual    { background-color: #271c36; border-left: 5px solid #a855f7; }
+.menu-item.postres   { background-color: #331929; border-left: 5px solid #ec4899; }
+.menu-item.bebidas   { background-color: #172a33; border-left: 5px solid #14b8a6; }
+
+.menu-item.eventos.bronce   { background-color: #2a1f1b; border-left: 5px solid #cd7f32; }
+.menu-item.eventos.plata    { background-color: #202632; border-left: 5px solid #c0c0c0; }
+.menu-item.eventos.oro      { background-color: #2d2613; border-left: 5px solid #d4af37; }
+.menu-item.eventos.diamante { background-color: #1e2b37; border-left: 5px solid #38bdf8; }
+
+/* --- ESPECIALIDADES --- */
+#especialidades .card-box {
+    max-width: 100%;
+}
+
+#especialidades .card-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+#especialidades .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+#especialidades .card-box:hover .card-img img {
+    transform: scale(1.05);
+}
+
+/* --- GALERÍA --- */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.item-galeria {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    height: 220px;
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.item-galeria:hover img {
+    transform: scale(1.08);
+}
+
+.item-galeria .pie-foto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+    color: #d4af37;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* --- SECCIÓN RESERVAS --- */
+.contenedor-reserva {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto 0 auto;
+    width: 100%;
+}
+
+.form-reserva {
+    background-color: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(63, 206, 231, 0.4);
+    flex: 1 1 65%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    color: #46d0e2;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #826edb;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.btn-reservar {
+    width: 100%;
+    background-color: #7b70e2;
+    color: #0f172a;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-reservar:hover {
+    background-color: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.info-reserva-card {
+    background-color: #1e293b;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.politicas-lista {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.politicas-lista li {
+    color: #cbd5e1;
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.politicas-lista li::before {
+    content: "•";
+    color: #4cf7b5;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0b1120;
+    color: #94a3b8 !important;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (PANTALLAS TABLETA Y MÓVIL)
+   ========================================================================== */
+
+/* TABLETAS (Pantallas de hasta 992px) */
+@media (max-width: 992px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo-seccion {
+        align-items: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .contenedor-reserva {
+        flex-direction: column;
+    }
+
+    .info-reserva-card {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+/* MÓVILES (Pantallas de hasta 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 0.8rem 3%;
+    }
+
+    nav ul {
+        gap: 0.6rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-reserva {
+        padding: 1.25rem;
+    }
+
+    .menu-tabs {
+        gap: 0.3rem;
+    }
+
+    .tab-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.78rem;
+    }
+
+    section {
+        padding: 2.5rem 1rem 1.5rem;
+    }
+}

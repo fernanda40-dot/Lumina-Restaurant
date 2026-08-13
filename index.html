@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lúmina Restaurant</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="imagenes/ICONO.png?v=2">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header>
+        <div class="logo-seccion">
+            <h1>Lúmina Restaurant</h1>
+            <span class="slogan">Sabores que iluminan momentos</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#chefs">Chefs</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
+
+        <a href="#menu" class="btn-header">Explorar Menú</a>
+    </header>
+
+    <main>
+        <!-- 1. INICIO -->
+        <section id="inicio" class="hero-seccion">
+            <div class="hero-banner">
+                <img src="imagenes/montana.png" alt="Bienvenidos a Lúmina">
+                <div class="hero-overlay">
+                    <h2>BIENVENIDO A LÚMINA</h2>
+                    <p>Un lugar donde los sabores, la tranquilidad y la naturaleza se unen.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 2. HISTORIA -->
+        <section id="historia">
+            <h2>Nuestra Historia</h2>
+            <p class="subtitulo-seccion">El origen de una experiencia culinaria en las alturas</p>
+            
+            <div class="historia-texto">
+                <p>En el año <strong>2022</strong>, mientras el mundo comenzaba a reabrir sus puertas tras los difíciles años de pandemia, nació la idea de crear un espacio donde las personas pudieran reconectar con la naturaleza, la paz y la buena mesa.</p>
+                <p>Fue así como elegimos este mirador en lo alto de la montaña. En sus inicios, <strong>Lúmina Restaurant</strong> comenzó como una pequeña estructura de madera iluminada sutilmente por faroles en medio de las noches frías y estrelladas.</p>
+                <p>Hoy en día, Lúmina se ha consolidado como un referente de alta gastronomía de montaña, fusionando técnicas culinarias modernas con ingredientes locales de primera calidad.</p>
+            </div>
+
+            <div class="grid-pilares">
+                <div class="card-box">
+                    <span class="pilar-numero">01</span>
+                    <h3>2022</h3>
+                    <p>Fundación tras la pandemia como un refugio de paz y calidez en la montaña.</p>
+                </div>
+                <div class="card-box">
+                    <span class="pilar-numero">02</span>
+                    <h3>El Concepto</h3>
+                    <p>Cocina de autor, ambiente acogedor a la luz de las brasas y vista panorámica nocturna.</p>
+                </div>
+                <div class="card-box">
+                    <span class="pilar-numero">03</span>
+                    <h3>Hoy</h3>
+                    <p>Un referente gastronómico donde cada velada se convierte en un recuerdo inolvidable.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 3. MENÚ INTERACTIVO -->
+        <section id="menu">
+            <h2>🍽️ Menú</h2>
+            <p class="subtitulo-seccion">Elige una categoría para explorar nuestros platillos</p>
+
+            <!-- BOTONES DE CATEGORÍAS -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="filtrarMenu('desayunos', 'desayuno.jfif', this)">☀️ Desayunos</button>
+                <button class="tab-btn" onclick="filtrarMenu('entradas', 'entradas.jfif', this)">🥗 Entradas</button>
+                <button class="tab-btn" onclick="filtrarMenu('carnes', 'carnes.jfif', this)">🥩 Carnes</button>
+                <button class="tab-btn" onclick="filtrarMenu('pollo', 'pollo.jfif', this)">🍗 Pollo</button>
+                <button class="tab-btn" onclick="filtrarMenu('pescados', 'pescado.jfif', this)">🐟 Pescados</button>
+                <button class="tab-btn" onclick="filtrarMenu('pastas', 'pasta.jfif', this)">🍝 Pastas</button>
+                <button class="tab-btn" onclick="filtrarMenu('casual', 'casual.jfif', this)">🍔 Menú Casual</button>
+                <button class="tab-btn" onclick="filtrarMenu('postres', 'postres.jfif', this)">🍰 Postres</button>
+                <button class="tab-btn" onclick="filtrarMenu('bebidas', 'bebidas.jfif', this)">☕ Bebidas</button>
+                <button class="tab-btn" onclick="filtrarMenu('eventos', 'eventos.jfif', this)">🎉 Eventos</button>
+            </div>
+
+            <!-- FOTO DESTACADA QUE CAMBIA SEGÚN LA CATEGORÍA -->
+            <div class="banner-categoria">
+                <img id="img-categoria" src="imagenes/desayuno.jfif" alt="Categoría actual">
+            </div>
+
+            <!-- TARJETAS DE PLATILLOS -->
+            <div class="grid-menu">
+                <!-- DESAYUNOS -->
+                <div class="menu-item desayunos">
+                    <span class="platillo-nombre">Desayuno Campestre Premium</span>
+                    <p class="platillo-desc">Huevos al gusto, chorizo artesanal, queso fresco, aguacate, frijoles y pan de masa madre.</p>
+                </div>
+                <div class="menu-item desayunos">
+                    <span class="platillo-nombre">Omelette Gourmet</span>
+                    <p class="platillo-desc">Espinaca, champiñones y queso mozzarella con un toque de hierbas.</p>
+                </div>
+                <div class="menu-item desayunos"><span class="platillo-nombre">Tostadas de Aguacate con Huevo Pochado</span></div>
+                <div class="menu-item desayunos"><span class="platillo-nombre">Waffles con Frutos Rojos y Miel</span></div>
+                <div class="menu-item desayunos"><span class="platillo-nombre">Yogur Griego con Granola y Frutas</span></div>
+                <div class="menu-item desayunos"><span class="platillo-nombre">Croissant de Jamón Serrano y Queso</span></div>
+
+                <!-- ENTRADAS -->
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Tabla de Quesos y Embutidos Artesanales</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Bruschettas de Tomate y Albahaca</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Camarones al Ajillo</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Crema de Hongos</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Sopa de Cebolla Gratinada</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Ensalada César con Pollo</span></div>
+                <div class="menu-item entradas" style="display: none;"><span class="platillo-nombre">Ensalada Mediterránea</span></div>
+
+                <!-- CARNES -->
+                <div class="menu-item carnes" style="display: none;"><span class="platillo-nombre">Filete de Res en Salsa de Vino Tinto</span></div>
+                <div class="menu-item carnes" style="display: none;"><span class="platillo-nombre">Ribeye a la Parrilla</span></div>
+                <div class="menu-item carnes" style="display: none;"><span class="platillo-nombre">Costillas BBQ Ahumadas</span></div>
+                <div class="menu-item carnes" style="display: none;"><span class="platillo-nombre">Lomo de Cerdo en Salsa de Mostaza y Miel</span></div>
+
+                <!-- POLLO -->
+                <div class="menu-item pollo" style="display: none;"><span class="platillo-nombre">Pollo Relleno de Espinaca y Queso</span></div>
+                <div class="menu-item pollo" style="display: none;"><span class="platillo-nombre">Pechuga en Salsa de Champiñones</span></div>
+                <div class="menu-item pollo" style="display: none;"><span class="platillo-nombre">Pollo al Romero con Vegetales</span></div>
+
+                <!-- PESCADOS -->
+                <div class="menu-item pescados" style="display: none;"><span class="platillo-nombre">Salmón a la Mantequilla de Limón</span></div>
+                <div class="menu-item pescados" style="display: none;"><span class="platillo-nombre">Trucha a las Finas Hierbas</span></div>
+                <div class="menu-item pescados" style="display: none;"><span class="platillo-nombre">Filete de Pescado Empanizado Artesanal</span></div>
+
+                <!-- PASTAS -->
+                <div class="menu-item pastas" style="display: none;"><span class="platillo-nombre">Fettuccine Alfredo con Pollo</span></div>
+                <div class="menu-item pastas" style="display: none;"><span class="platillo-nombre">Pasta al Pesto con Camarones</span></div>
+                <div class="menu-item pastas" style="display: none;"><span class="platillo-nombre">Lasaña de Carne Gratinada</span></div>
+                <div class="menu-item pastas" style="display: none;"><span class="platillo-nombre">Risotto de Hongos (Vegetariano)</span></div>
+
+                <!-- CASUAL -->
+                <div class="menu-item casual" style="display: none;"><span class="platillo-nombre">Hamburguesa Angus Artesanal</span></div>
+                <div class="menu-item casual" style="display: none;"><span class="platillo-nombre">Hamburguesa de Pollo Crispy</span></div>
+                <div class="menu-item casual" style="display: none;"><span class="platillo-nombre">Club Sandwich</span></div>
+                <div class="menu-item casual" style="display: none;"><span class="platillo-nombre">Papas Rústicas con Queso y Tocino</span></div>
+
+                <!-- POSTRES -->
+                <div class="menu-item postres" style="display: none;"><span class="platillo-nombre">Cheesecake de Frutos Rojos</span></div>
+                <div class="menu-item postres" style="display: none;"><span class="platillo-nombre">Brownie con Helado Artesanal</span></div>
+                <div class="menu-item postres" style="display: none;"><span class="platillo-nombre">Tiramisú Tradicional</span></div>
+                <div class="menu-item postres" style="display: none;"><span class="platillo-nombre">Volcán de Chocolate</span></div>
+
+                <!-- BEBIDAS -->
+                <div class="menu-item bebidas" style="display: none;">
+                    <span class="platillo-nombre">Cafetería Tradicional</span>
+                    <p class="platillo-desc">Espresso, Americano, Cappuccino, Latte y Chocolate caliente.</p>
+                </div>
+                <div class="menu-item bebidas" style="display: none;">
+                    <span class="platillo-nombre">Bebidas Frías y Refrescantes</span>
+                    <p class="platillo-desc">Limonadas artesanales de fresa o hierbabuena, té helado y smoothies.</p>
+                </div>
+
+                <!-- PAQUETES DE EVENTOS -->
+                <div class="menu-item eventos bronce" style="display: none;">
+                    <span class="platillo-nombre">🥉 Paquete Bronce</span>
+                    <ul class="paquete-lista">
+                        <li>Entrada</li>
+                        <li>Pollo a la plancha</li>
+                        <li>Arroz</li>
+                        <li>Vegetales</li>
+                        <li>Bebida</li>
+                        <li>Postre</li>
+                    </ul>
+                </div>
+
+                <div class="menu-item eventos plata" style="display: none;">
+                    <span class="platillo-nombre">Paquete Plata</span>
+                    <ul class="paquete-lista">
+                        <li>Entrada gourmet</li>
+                        <li>Lomo de cerdo o pollo relleno</li>
+                        <li>Puré de papa</li>
+                        <li>Ensalada</li>
+                        <li>Bebida</li>
+                        <li>Postre</li>
+                    </ul>
+                </div>
+
+                <div class="menu-item eventos oro" style="display: none;">
+                    <span class="platillo-nombre">Paquete Oro</span>
+                    <ul class="paquete-lista">
+                        <li>Tabla de quesos para compartir</li>
+                        <li>Filete de res o salmón</li>
+                        <li>Papas al romero</li>
+                        <li>Vegetales salteados</li>
+                        <li>Postre premium</li>
+                        <li>Café</li>
+                    </ul>
+                </div>
+
+                <div class="menu-item eventos diamante" style="display: none;">
+                    <span class="platillo-nombre">Paquete Diamante</span>
+                    <ul class="paquete-lista">
+                        <li>Cóctel de bienvenida</li>
+                        <li>Entrada gourmet</li>
+                        <li>Filete de res premium o salmón</li>
+                        <li>Guarniciones gourmet</li>
+                        <li>Barra de postres</li>
+                        <li>Café y té</li>
+                        <li>Decoración básica y montaje elegante</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 4. ESPECIALIDADES -->
+        <section id="especialidades">
+            <h2>Especialidades</h2>
+            <p class="subtitulo-seccion">Creaciones únicas del chef</p>
+            <div class="grid-pilares">
+                <div class="card-box">
+                    <div class="card-img">
+                        <img src="imagenes/a las brasas.png" alt="Tomahawk a las Brasas">
+                    </div>
+                    <h3>Tomahawk a las Brasas</h3>
+                    <p>Corte ahumado con leña de roble, servido con puré rústico y mantequilla de romero.</p>
+                </div>
+                <div class="card-box">
+                    <div class="card-img">
+                        <img src="imagenes/Risoto.png" alt="Risotto de Hongos">
+                    </div>
+                    <h3>Risotto de Hongos</h3>
+                    <p>Arroz arborio cremoso con selección de hongos silvestres y aceite de trufa.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 5. CHEFS -->
+        <section id="chefs">
+            <h2>Nuestros Chefs</h2>
+            <p class="subtitulo-seccion">Pasión y arte culinario</p>
+            
+            <div class="grid-pilares">
+                <div class="card-box">
+                    <h3>Chef Ejecutivo<br><span style="color: #d4af37; font-size: 1.1rem; font-family: 'Poppins', sans-serif;">Edwin Herrera</span></h3>
+                    
+                    <p style="text-align: justify; margin-bottom: 0.8rem;">
+                        Con más de 15 años de experiencia en gastronomía nacional e internacional, nuestro chef combina técnicas de alta cocina con ingredientes frescos y de origen local para crear una experiencia culinaria única.
+                    </p>
+                    
+                    <p style="text-align: justify; margin-bottom: 0.8rem;">
+                        Su pasión es transformar recetas tradicionales en platillos gourmet que conservan la esencia de la cocina de montaña, resaltando los sabores auténticos de cada ingrediente.
+                    </p>
+                    
+                    <p style="text-align: justify; margin-bottom: 1rem;">
+                        Cada creación es preparada con dedicación, buscando ofrecer una experiencia memorable en cada visita.
+                    </p>
+
+                    <strong style="color: #d4af37; display: block; margin-top: 1rem; text-align: left;">Especialidades:</strong>
+                    <ul class="paquete-lista" style="text-align: left;">
+                        <li>Cortes premium a las brasas</li>
+                        <li>Cocina gourmet contemporánea</li>
+                        <li>Risottos y pastas artesanales</li>
+                        <li>Cocina de autor</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 6. GALERÍA -->
+        <section id="galeria">
+            <h2>Galería</h2>
+            <p class="subtitulo-seccion">Un vistazo a nuestras instalaciones, Platillos y Paisajes</p>
+            
+            <div class="grid-galeria">
+                <div class="item-galeria">
+                    <img src="imagenes/2.png" alt="Vista del Mirador">
+                    <div class="pie-foto">Vista Nocturna del Mirador</div>
+                </div>
+                <div class="item-galeria">
+                    <img src="imagenes/4.jfif" alt="Paquete Oro">
+                    <div class="pie-foto">Paquete oro</div>
+                </div>
+                <div class="item-galeria">
+                    <img src="imagenes/1.png" alt="Ambiente nocturno">
+                    <div class="pie-foto">Ambiente Nocturno</div>
+                </div>
+                <div class="item-galeria">
+                    <img src="imagenes/3.png" alt="Eventos">
+                    <div class="pie-foto">Cenas y Eventos</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 7. RESERVAS -->
+        <section id="reservas">
+            <h2>Reservas</h2>
+            <p class="subtitulo-seccion">Reserva tu mesa directamente en nuestro portal web</p>
+
+            <div class="contenedor-reserva">
+                <!-- FORMULARIO DE RESERVA DIRECTA -->
+                <form class="form-reserva" id="formReservaLumina">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            class="form-control" 
+                            placeholder="Ej. Carlos Mendoza" 
+                            pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(\s+[a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$" 
+                            title="Debes ingresar al menos un nombre y un apellido" 
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" class="form-control" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono de Contacto</label>
+                            <input 
+                                type="tel" 
+                                id="telefono" 
+                                class="form-control" 
+                                placeholder="7000-0000" 
+                                maxlength="9" 
+                                pattern="^[0-9]{4}-?[0-9]{4}$" 
+                                title="Ingresa un número válido de 8 dígitos (ej. 70000000 o 7000-0000)" 
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora</label>
+                            <input type="time" id="hora" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="personas">N° Personas</label>
+                            <select id="personas" class="form-control" required>
+                                <option value="1">1 Persona</option>
+                                <option value="2" selected>2 Personas</option>
+                                <option value="4">4 Personas</option>
+                                <option value="6">6 Personas</option>
+                                <option value="grupo">Grupo (+8)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentario">Notas o solicitudes especiales (Opcional)</label>
+                        <textarea id="comentario" class="form-control" rows="3" placeholder="Ubicación preferida (terraza/interior), celebraciones, alergias..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-reservar">Confirmar Reserva en Web</button>
+                </form>
+
+                <!-- INFORMACIÓN Y POLÍTICAS DE RESERVA -->
+                <div class="info-reserva-card">
+                    <div>
+                        <h3 style="font-family: 'Playfair Display', serif; color: #ffffff; margin-bottom: 0.5rem;">Políticas de Reserva</h3>
+                        <p style="color: #d4af37; font-size: 0.85rem; font-weight: 600;">Lúmina Restaurant</p>
+                        
+                        <ul class="politicas-lista">
+                            <li><strong>Confirmación Inmediata:</strong> Al completar el formulario, recibirás los detalles en tu correo registrado.</li>
+                            <li><strong>Tiempo de Tolerancia:</strong> Tu mesa estará garantizada durante 15 minutos posteriores a la hora reservada.</li>
+                            <li><strong>Grupos Grandes:</strong> Para grupos mayores a 8 personas, coordinaremos el menú previo mediante confirmación en el portal.</li>
+                        </ul>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1rem;">
+                        <span style="color: #cbd5e1; font-size: 0.8rem; display: block;">Horarios de Atención:</span>
+                        <span style="color: #ffffff; font-size: 0.85rem; font-weight: 500;">Martes a Domingo — 07:00 AM a 10:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 8. EVENTOS SECCIÓN INFORMATIVA -->
+        <section id="eventos" style="padding:1rem 1rem; text-align: center;">
+            <h2 style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 0.5rem;">Eventos Especiales</h2>
+            <p style="color: #cbd5e1; font-size: 1rem; margin-bottom: 2rem;">Haz de tus momentos más importantes una experiencia inolvidable en las alturas</p>
+
+            <div style="max-width: 1000px; width: 100%; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.4); box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+                <img src="imagenes/cenas.png" alt="Eventos Especiales en Lúmina Restaurant" style="width: 100%; height: auto; display: block;">
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 9. UBICACIÓN -->
+        <section id="ubicacion" style="padding: 4rem 1rem; text-align: center;">
+            <h2 style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 0.5rem;">Ubicación & Visita</h2>
+            <p style="color: #d4af37; font-size: 1rem; margin-bottom: 2.5rem; letter-spacing: 1px;">SABORES QUE ILUMINAN MOMENTOS EN LAS ALTURAS</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; max-width: 1100px; margin: 0 auto; justify-content: center; align-items: stretch;">
+                
+                <!-- COLUMNA 1: INFORMACIÓN -->
+                <div style="flex: 1; min-width: 300px; max-width: 450px; background-color: #1e293b; border-radius: 12px; padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.3); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #d4af37; font-size: 1.4rem; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 0.5rem;">Dónde Encontrarnos</h3>
+                        
+                        <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.6;">
+                            <strong style="color: #ffffff;">Dirección:</strong><br>
+                            Carretera a El Boquerón, Km 18, Calle al Volcán, Santa Tecla, El Salvador.
+                        </p>
+
+                        <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.6;">
+                            <strong style="color: #ffffff;">Referencias:</strong><br>
+                            A solo 18 minutos de la ciudad. Deck panorámico con vista exclusiva a la cordillera y al valle de San Salvador.
+                        </p>
+
+                        <h3 style="color: #d4af37; font-size: 1.4rem; margin-top: 1.5rem; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 0.5rem;">Horarios de Atención</h3>
+                        <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.8;">
+                            Martes a Domingo: 07:00 AM - 10:00 PM<br>
+                            Lunes: Cerrado
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://maps.google.com/maps?q=13.740888,-89.273611" target="_blank" style="display: block; text-align: center; background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 0.7rem; border-radius: 6px; font-weight: bold; text-decoration: none; transition: 0.3s;">
+                            Abrir en Google Maps 📍
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: MAPA -->
+                <div style="flex: 1.2; min-width: 300px; max-width: 600px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.4); min-height: 380px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=13.740888,-89.273611&hl=es&z=15&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 380px; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- 10. CONTACTOS -->
+        <section id="contactos">
+            <h2>Contactos</h2>
+            <p class="subtitulo-seccion">Estamos para atenderte</p>
+            <div class="grid-pilares">
+                <div class="card-box">
+                    <h3>Teléfono</h3>
+                    <p>+503 2200-0000</p>
+                </div>
+                <div class="card-box">
+                    <h3>WhatsApp</h3>
+                    <p>+503 7000-0000</p>
+                </div>
+                <div class="card-box">
+                    <h3>Correo</h3>
+                    <p>contacto@luminarestaurant.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lúmina Restaurant. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE FILTRADO Y CAMBIO DE IMAGEN -->
+    <script src="js/script.js"></script>
+</body>
+</html>
